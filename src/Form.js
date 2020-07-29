@@ -24,9 +24,13 @@ class Form extends Component {
         })
     }
 
-    handleOnSubmit = event => {
-        // This might be the best place to perform a 'fetch' on the API
-        alert(`${this.state.username} ${this.state.password}`)
+    handleOnSubmit = async (event) => {
+        event.preventDefault()
+
+        const response = await fetch(`http://localhost:8080/login/${this.state.username}/${this.state.password}`)
+            .then((res) => res.json())
+
+        alert(response.message)
     }
 
     render() {
