@@ -1,13 +1,11 @@
 import React from 'react';
+import Form from './Form';
 
 function App() {
   return (
+    // Pull in the Form
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello World
-        </p>
-      </header>
+      <Form />
     </div>
   );
 }
